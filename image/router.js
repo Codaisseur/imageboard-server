@@ -9,4 +9,12 @@ router.get('/image', (request, response, next) => {
     .catch(next)
 })
 
+router.post('/image', (request, response, next) => {
+  console.log('request.body test:', request.body)
+  Image
+    .create(request.body)
+    .then(image => response.send(image))
+    .catch(next)
+})
+
 module.exports = router
