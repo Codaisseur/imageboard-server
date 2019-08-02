@@ -1,8 +1,8 @@
 const express = require('express')
-const db = require('./db')
-const image = require('./image/model')
+const router = require('./image/router')
 
 const app = express()
+app.use(router)
 const port = process.env.PORT || 4001
 
 app.listen(port, () => console.log(`Listening on :${port}`))
